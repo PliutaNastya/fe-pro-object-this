@@ -23,5 +23,6 @@ export const hotel = {
       lastName,
       money: money - this.priceByPlace,
     });
+    this.paidPerPlace();
   },
 };
