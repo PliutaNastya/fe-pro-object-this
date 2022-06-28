@@ -10,19 +10,20 @@ export const hotel = {
     return this.quantityOfPlaces - this.getLength();
   },
   paidPerPlace: function () {
-    return (this.bankAccount = this.getLength() * this.priceByPlace);
+    this.bankAccount = this.getLength() * this.priceByPlace;
   },
   checkInGuest: function (firstName, lastName, money) {
     if (this.getActualFreePlace() <= 0) {
       return 'Sorry, we have not free spaces';
-    } else if (money < this.priceByPlace) {
+    }
+    if (money < this.priceByPlace) {
       return 'Sorry, you have not enough money';
     }
-    return (this.guests[this.getLength()] = {
+    this.guests[this.getLength()] = {
       firstName,
       lastName,
       money: money - this.priceByPlace,
-    });
+    };
     this.paidPerPlace();
   },
 };
