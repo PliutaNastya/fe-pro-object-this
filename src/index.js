@@ -13,7 +13,7 @@ export const hotel = {
     return (this.bankAccount = this.getLength() * this.priceByPlace);
   },
   checkInGuest: function (firstName, lastName, money) {
-    if (Object.keys(this.guests).length >= this.quantityOfPlaces) {
+    if (Object.keys(this.guests).length > this.quantityOfPlaces) {
       return 'Sorry, we have not free spaces';
     } else if (money < this.priceByPlace) {
       return 'Sorry, you have not enough money';
