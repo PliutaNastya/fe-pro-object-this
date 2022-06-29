@@ -19,11 +19,13 @@ export const hotel = {
     if (money < this.priceByPlace) {
       return 'Sorry, you have not enough money';
     }
-    return (this.guests[this.getLength()] = {
+    this.guests[this.getLength()] = {
       firstName,
       lastName,
       money: money - this.priceByPlace,
-    });
+    };
     this.paidPerPlace();
+
+    return this.guests[this.getLength() - 1];
   },
 };
