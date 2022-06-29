@@ -10,9 +10,9 @@ export const hotel = {
     return this.quantityOfPlaces - this.getLength();
   },
   paidPerPlace() {
-    return (this.bankAccount = this.getLength() * this.priceByPlace);
+    this.bankAccount = this.getLength() * this.priceByPlace;
   },
-  checkInGuest(firstName, lastName, money) {
+  checkInGuest: function (firstName, lastName, money) {
     if (this.getActualFreePlace() <= 0) {
       return 'Sorry, we have not free spaces';
     }
